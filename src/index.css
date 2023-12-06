@@ -1,0 +1,70 @@
+:root {
+  font-family: "Source Sans 3", Arial, sans-serif;
+  color-scheme: light dark;
+  color: rgb(210, 210, 210);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+#root {
+  width: 100%;
+}
+
+@font-face {
+  font-family: "Edo SZ";
+  src: local("Edo SZ"), url("assets/fonts/edosz.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: local("Source Sans 3"),
+    url("assets/fonts/SourceSans3-Regular.ttf") format("truetype");
+  font-weight: bold;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  --textColor: rgb(210, 210, 210);
+  --dialogBgColor: rgba(9, 9, 9, 0.814);
+  --yellow: #e6dc00;
+  --orange: #a26200;
+  --gradientYellow: #f1e84d;
+  --gradientOrange: #c49f01;
+}
+
+h1 {
+  font-size: clamp(14px, 6vw, 50px);
+  margin: 0 20px;
+  font-family: "Edo SZ";
+  text-align: center;
+}
+
+a,
+a:visited {
+  color: var(--orange);
+  text-decoration: none;
+}
+
+.ReactCrop {
+  border: 1px solid rgb(101, 101, 101);
+}
+
+.ReactCrop__child-wrapper > img,
+.ReactCrop__child-wrapper > video {
+  max-height: 360px !important;
+}
+
+@media only screen and (max-width: 700px) {
+
+  .ReactCrop__child-wrapper > img,
+  .ReactCrop__child-wrapper > video {
+    max-height: 180px !important;
+  }
+}

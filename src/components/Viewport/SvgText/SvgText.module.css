@@ -1,0 +1,19 @@
+.text {
+  -webkit-text-stroke: 3px white;
+  font-size: 20px;
+  font-weight: 500;
+  paint-order: stroke fill;
+}
+.main {
+  font-size: 45px;
+}
+
+@media only screen and (max-width: 700px) {
+  .text {
+    font-size: 10px;
+  }
+
+  .main {
+    font-size: 22.5px;
+  }
+}

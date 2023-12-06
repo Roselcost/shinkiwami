@@ -1,0 +1,112 @@
+.control {
+  font-weight: 600;
+  border: 1px solid;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  border-image: linear-gradient(to right, #2a2a2a, #505050, #2a2a2a);
+  border-image-slice: 1;
+}
+
+.inputIcon img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  filter: invert(1);
+  z-index: 1;
+  width: 16px;
+  height: 16px;
+  left: 16px;
+}
+
+.inputIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
+.label {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 32px;
+  position: relative;
+  background: linear-gradient(to bottom, #252525, #080808);
+}
+
+.value {
+  width: calc(100% - 130px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #484843, #161616);
+  position: relative;
+}
+
+input {
+  width: 100%;
+  height: 28px;
+  margin: 0 20px;
+}
+
+.label::before {
+  content: "";
+  background: linear-gradient(to bottom, #484843, #161616);
+  position: absolute;
+  right: -18px;
+  transform: skew(-45deg);
+  height: 100%;
+  width: 40px;
+}
+
+input {
+  border-image: linear-gradient(to right, #2a2a2a, #505050, #2a2a2a);
+  border-image-slice: 1;
+}
+
+input[type="text"] {
+  background-color: var(--dialogBgColor);
+  padding: 0 8px;
+  color: var(--textColor);
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #222222;
+  height: 8px;
+}
+
+/******** Firefox ********/
+input[type="range"]::-moz-range-track {
+  background: #222222;
+  height: 8px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -8px; /* Centers thumb on the track */
+  background: radial-gradient(var(--yellow), var(--orange));
+  height: 24px;
+  width: 8px;
+}
+
+/******** Firefox ********/
+input[type="range"]::-moz-range-thumb {
+  border: none; /*Removes extra border that FF applies*/
+  margin-top: -8px; /* Centers thumb on the track */
+  background: radial-gradient(var(--yellow), var(--orange));
+  height: 24px;
+  width: 8px;
+}

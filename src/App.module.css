@@ -1,0 +1,102 @@
+.bg {
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  position: fixed;
+}
+
+.bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.limits {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color: var(--dialogBgColor);
+  border: 1px solid;
+  border-image: linear-gradient(to right, #616457, #b6b3a0, #616457);
+  border-image-slice: 0 1 1 1;
+  box-shadow: 1px 2px 6px black;
+  padding: 0 16px;
+  position: relative;
+}
+
+.headerButtons {
+  display: flex;
+  gap: 20px;
+}
+
+.languageDropdown {
+  position: absolute;
+  top: 80px;
+  right: -1px;
+  z-index: 3;
+}
+
+.content {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 40px 8px 0 8px;
+  gap: 20px;
+}
+
+.card {
+  background-color: var(--dialogBgColor);
+  border: 1px solid;
+  border-image: linear-gradient(to right, #616457, #b6b3a0, #616457);
+  border-image-slice: 1;
+  box-shadow: 1px 2px 6px black;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.imageViewer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.imageButtons {
+  display: flex;
+  gap: 24px;
+}
+
+.controls {
+  width: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media only screen and (max-width: 1280px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .content {
+    margin: 40px 0 0 0;
+  }
+  .controls {
+    width: 350px;
+  }
+  .card {
+    padding: 32px 8px;
+  }
+}

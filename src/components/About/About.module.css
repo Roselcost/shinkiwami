@@ -1,0 +1,22 @@
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-left: 20px;
+  margin: 12px 0;
+  justify-content: center;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  filter: sepia();
+}
+
+.heading h2 {
+  margin: 0 0 0 20px;
+}
+.content {
+  padding: 20px;
+}

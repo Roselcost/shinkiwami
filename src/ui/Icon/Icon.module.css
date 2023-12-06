@@ -1,0 +1,26 @@
+.icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #464744, #080808);
+  border: 2px solid rgba(107 109 109);
+  border-radius: 4px;
+  font-size: 32px;
+  transform: rotate(45deg);
+}
+
+.textIcon {
+  background: radial-gradient(var(--yellow), var(--orange));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transform: rotate(-45deg);
+}
+
+.innerIcon {
+  width: 20px;
+  filter: invert(1);
+  transform: rotate(-45deg);
+}
