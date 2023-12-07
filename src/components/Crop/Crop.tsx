@@ -23,7 +23,7 @@ const Crop: React.FC<Props> = () => {
   return (
     <>
       <div className={classes.heading}>
-        <Icon icon={"src/assets/icons/crop.png"}></Icon>
+        <Icon icon={"icons/crop.png"}></Icon>
         <h2>{strings[stateProps.language].cropImage}</h2>
       </div>
       <div className={classes.crop}>
