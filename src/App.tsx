@@ -232,6 +232,7 @@ function App() {
           })
         );
       };
+      dispatch(setDialog("crop"));
     } else {
       alert("This file is not an image!");
     }
@@ -320,11 +321,7 @@ function App() {
                     ? strings[stateProps.language].stop
                     : strings[stateProps.language].play
                 }
-                icon={
-                  stateProps.dramatic
-                    ? "icons/stop.png"
-                    : "icons/play.png"
-                }
+                icon={stateProps.dramatic ? "icons/stop.png" : "icons/play.png"}
               />
               <Button
                 onClick={() => dispatch(setDialog("crop"))}
