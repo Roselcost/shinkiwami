@@ -7,7 +7,7 @@ import Language from "./components/Language/Language";
 import About from "./components/About/About";
 import Dialog from "./ui/Dialog/Dialog";
 import Crop from "./components/Crop/Crop";
-import * as domtoimage from "dom-to-image";
+import domtoimage from "dom-to-image";
 import strings from "./assets/strings.json";
 
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
