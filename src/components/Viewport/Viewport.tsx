@@ -102,69 +102,71 @@ function Viewport() {
   return (
     <>
       <div className={classes.viewport}>
-        <div id="image" className={classes.shadows} style={setShadowStyle()}>
-          <div
-            className={classes.brightness}
-            style={{ filter: "brightness(" + stateProps.brightness + "%" }}
-          >
+        <div id="image" className={classes.outer}>
+          <div className={classes.shadows} style={setShadowStyle()}>
             <div
-              className={classes.contrast}
-              style={{
-                filter:
-                  "contrast(" +
-                  (stateProps.dramatic
-                    ? stateProps.dramaticContrast
-                    : stateProps.contrast) +
-                  "%)",
-              }}
+              className={classes.brightness}
+              style={{ filter: "brightness(" + stateProps.brightness + "%" }}
             >
-              <img
-                style={setImgStyle()}
-                className={classes.image}
-                src={stateProps.image ? stateProps.image : dojima}
-              ></img>
+              <div
+                className={classes.contrast}
+                style={{
+                  filter:
+                    "contrast(" +
+                    (stateProps.dramatic
+                      ? stateProps.dramaticContrast
+                      : stateProps.contrast) +
+                    "%)",
+                }}
+              >
+                <img
+                  style={setImgStyle()}
+                  className={classes.image}
+                  src={stateProps.image ? stateProps.image : dojima}
+                ></img>
+              </div>
             </div>
-          </div>
-          <div
-            style={{ opacity: stateProps.textOpacity }}
-            className={classes.imageText}
-          >
-            <svg className={classes.svg} height={"55"}>
-              <SvgText
-                main={true}
-                isMobile={isMobile}
-                position={
-                  stateProps.line2
-                    ? isMobile
-                      ? "95"
-                      : "50"
-                    : isMobile
-                    ? ""
-                    : "80"
-                }
-                text={stateProps.title}
-              />
-              <SvgText
-                main={false}
-                isMobile={isMobile}
-                position={
-                  stateProps.line2
-                    ? isMobile
-                      ? "117.5"
-                      : "95"
-                    : isMobile
-                    ? ""
-                    : "120"
-                }
-                text={stateProps.line1}
-              />
-              <SvgText
-                main={false}
-                isMobile={isMobile}
-                position={isMobile ? "130" : "120"}
-                text={stateProps.line2}
-              />
-            </svg>
+            <div
+              style={{ opacity: stateProps.textOpacity }}
+              className={classes.imageText}
+            >
+              <svg className={classes.svg} height={"55"}>
+                <SvgText
+                  main={true}
+                  isMobile={isMobile}
+                  position={
+                    stateProps.line2
+                      ? isMobile
+                        ? "95"
+                        : "50"
+                      : isMobile
+                      ? ""
+                      : "80"
+                  }
+                  text={stateProps.title}
+                />
+                <SvgText
+                  main={false}
+                  isMobile={isMobile}
+                  position={
+                    stateProps.line2
+                      ? isMobile
+                        ? "117.5"
+                        : "95"
+                      : isMobile
+                      ? ""
+                      : "120"
+                  }
+                  text={stateProps.line1}
+                />
+                <SvgText
+                  main={false}
+                  isMobile={isMobile}
+                  position={isMobile ? "130" : "120"}
+                  text={stateProps.line2}
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </div>

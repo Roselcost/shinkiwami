@@ -50,6 +50,7 @@ header {
 }
 
 .card {
+  z-index: 0;
   background-color: var(--dialogBgColor);
   border: 1px solid;
   border-image: linear-gradient(to right, #616457, #b6b3a0, #616457);
