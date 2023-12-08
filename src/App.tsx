@@ -7,7 +7,7 @@ import Language from "./components/Language/Language";
 import About from "./components/About/About";
 import Dialog from "./ui/Dialog/Dialog";
 import Crop from "./components/Crop/Crop";
-import * as htmltoimage from "html-to-image";
+import * as domtoimage from "dom-to-image";
 import strings from "./assets/strings.json";
 
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
@@ -111,8 +111,8 @@ function App() {
     if (stateProps.isMobile) {
       scale = "scale(4)";
     }
-    htmltoimage
-      .toPng(document.getElementById("image")!, {
+    domtoimage
+      .toPng(document.getElementById("imageContainer")!, {
         width: 1280,
         height: 720,
         style: { transform: scale, transformOrigin: "top left" },

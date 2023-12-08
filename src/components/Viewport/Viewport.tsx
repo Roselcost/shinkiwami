@@ -102,7 +102,7 @@ function Viewport() {
   return (
     <>
       <div className={classes.viewport}>
-        <div id="image" className={classes.outer}>
+        <div id="imageContainer" className={classes.imageContainer}>
           <div className={classes.shadows} style={setShadowStyle()}>
             <div
               className={classes.brightness}
