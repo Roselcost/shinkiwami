@@ -106,17 +106,33 @@ function App() {
     }
   };
 
-  const downloadImage = () => {
+  const transformToPng = async (scale: string) => {
+    return await domtoimage.toPng(document.getElementById("imageContainer")!, {
+      width: 1280,
+      height: 720,
+      style: { transform: scale, transformOrigin: "top left" },
+    });
+  };
+
+  const downloadImage = async () => {
     let scale = "scale(2)";
     if (stateProps.isMobile) {
       scale = "scale(4)";
     }
-    domtoimage
-      .toPng(document.getElementById("imageContainer")!, {
-        width: 1280,
-        height: 720,
-        style: { transform: scale, transformOrigin: "top left" },
-      })
+    const isMobileNow = stateProps.isMobile;
+    const isSafari = /^((?!Chrome|Android).)*Safari/i.test(navigator.userAgent);
+
+    if (isSafari) {
+      // Safari has issues while scaling images, this is a workaround
+      dispatch(setIsMobile(false));
+      scale = "scale(2)";
+      // Safari is kinda unreliable when getting the image, this is another workaround
+      for (let i = 0; i < 5; ++i) {
+        await transformToPng(scale);
+      }
+    }
+
+    await transformToPng(scale)
       .then(function (dataUrl) {
         const img = new Image();
         img.src = dataUrl;
@@ -124,6 +140,7 @@ function App() {
         link.download = "shinkiwami.png";
         link.href = dataUrl;
         link.click();
+        dispatch(setIsMobile(isMobileNow));
       })
       .catch(function (error) {
         console.error("oops, something went wrong!", error);

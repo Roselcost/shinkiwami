@@ -12,6 +12,15 @@ const SvgText: React.FC<Props> = ({ text, position, main, isMobile }) => {
     <>
       <text
         className={main ? `${classes.text} ${classes.main}` : `${classes.text}`}
+        style={
+          isMobile
+            ? main
+              ? { fontSize: "22.5px" }
+              : { fontSize: "10px" }
+            : main
+            ? { fontSize: "45px" }
+            : { fontSize: "20px" }
+        }
         x="50%"
         y={position}
         textAnchor="middle"

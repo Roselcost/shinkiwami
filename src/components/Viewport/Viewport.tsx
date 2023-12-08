@@ -101,7 +101,14 @@ function Viewport() {
 
   return (
     <>
-      <div className={classes.viewport}>
+      <div
+        style={
+          stateProps.isMobile
+            ? { width: "320px", height: "180px" }
+            : { width: "640px", height: "360px" }
+        }
+        className={classes.viewport}
+      >
         <div id="imageContainer" className={classes.imageContainer}>
           <div className={classes.shadows} style={setShadowStyle()}>
             <div
