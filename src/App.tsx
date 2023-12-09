@@ -106,10 +106,10 @@ function App() {
     }
   };
 
-  const transformToPng = async (scale: string) => {
+  const transformToPng = async (scale: string, isSafari: boolean) => {
     return await domtoimage.toPng(document.getElementById("imageContainer")!, {
-      width: 1280,
-      height: 720,
+      width: isSafari ? 640 : 1280,
+      height: isSafari ? 360 : 720,
       style: { transform: scale, transformOrigin: "top left" },
     });
   };
@@ -125,14 +125,14 @@ function App() {
     if (isSafari) {
       // Safari has issues while scaling images, this is a workaround
       dispatch(setIsMobile(false));
-      scale = "scale(2)";
+      scale = "scale(1)";
       // Safari is kinda unreliable when getting the image, this is another workaround
       for (let i = 0; i < 5; ++i) {
-        await transformToPng(scale);
+        await transformToPng(scale, isSafari);
       }
     }
 
-    await transformToPng(scale)
+    await transformToPng(scale, isSafari)
       .then(function (dataUrl) {
         const img = new Image();
         img.src = dataUrl;

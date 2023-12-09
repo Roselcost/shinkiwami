@@ -47,6 +47,13 @@ function About() {
             videogames.
           </li>
           <li>
+            NOTE: Works best on Chrome based browsers (Chrome, Edge, etc). In
+            Safari there is an issue while capturing the image, that's why on
+            mobile it's amplified for a moment. On Safari, the resulting image
+            is 640x360px. On other browsers, it's 1280x720px. That's why I
+            recommend a browser different than Safari for the time being.
+          </li>
+          <li>
             NOTE: Unfortunately, there is no way to download the animation. If
             you want to save it, I recommend you to use an app like Xbox Game
             Bar on Windows, Quicktime on Mac or OBS Studio to record the part of
